@@ -1,4 +1,19 @@
-<p>
-  Ide jön majd a NYILVÁNTARTÁS komponens (egy időben csak az egyik látszik)
-</p>
-<a href="" role="button" class="btn btn-secondary btn-lg">KEZDŐLAP</a>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-3">
+        <nav class="nav flex-column">
+          <h3 class="text-center">Tranzakciók a könyvekkel</h3>
+          <a routerLink="receive" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-success btn-lg">BEVÉTELEZ</a>
+          <a routerLink="sell" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-success btn-lg">ELAD</a>
+          <a routerLink="transactionList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-success btn-lg">TRANZAKCIÓK LISTÁZÁSA</a>
+          <br>
+          <a routerLink="/books" class="nav-link btn btn-primary btn-lg">NYILVÁNTARTÁS</a>
+          <br><br>
+          <a href="" role="button" class="nav-link btn btn-secondary btn-lg">KEZDŐLAP</a>
+        </nav>
+      </div>
+      <div class="col-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
