@@ -1,0 +1,23 @@
+.background {
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-image: url("../../assets/corner-storefront.jpg");
+}
+
+.container {
+  height: 100%;
+}
+
+.row {
+  height: 100%;
+}
+
+.btn {
+  width: 200px;
+}
+
+#toCenter {
+  width: 200px;
+  margin: auto;
+}
