@@ -1,0 +1,27 @@
+{
+  "books": [
+    { 
+      "id": 1,
+      "author": "Müller Péter",
+      "title": "Szeretetkönyv",
+      "category": "Életrajz",
+      "published": 2000,
+      "description": "Filózófiai elmélkedés"
+    }
+  ],
+  "stock": [
+    { 
+      "book_id": 1,
+      "qty": 105
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "book_id": 1,
+      "date": "2019/02/18",
+      "mov_type": "B",
+      "qty": 100
+    }
+  ]
+}
