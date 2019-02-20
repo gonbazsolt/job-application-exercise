@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Book } from '../../../../models/TS/book'
 
 @Component({
   selector: 'app-book-create',
@@ -72,7 +73,7 @@ export class BookCreateComponent implements OnInit {
     return null;
   }
 
-  sendCreateNewBookHttpRequest(book: any): Observable<any> {
+  sendCreateNewBookHttpRequest(book: Book): Observable<Book> {
     //book.published = null; //direkt hiba generálása az error handling teszteléséhez
     console.log('onHttpRequest', JSON.stringify(book));
     let headers: HttpHeaders = new HttpHeaders();
