@@ -1,7 +1,6 @@
 'use strict';
 
-const express = require('express');
-const app = express();
+const app = require('./routeHandler');
 const PORT = 8080;
 
 app.listen(PORT, () => {
