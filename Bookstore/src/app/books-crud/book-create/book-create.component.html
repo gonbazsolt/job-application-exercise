@@ -48,7 +48,7 @@
         A mező kitöltése kötelező!
       </small>
       <small
-        *ngIf="(createBookForm.get('published').errors['yearIsForbidden'] && createBookForm.get('published').touched && createBookForm.value.published !== null)"
+        *ngIf="(notValidPublishingYear && createBookForm.get('published').touched && createBookForm.value.published !== null)"
         class="text-danger">
         Az értéknek 1901 és 2019 között kell lennie!
       </small>
