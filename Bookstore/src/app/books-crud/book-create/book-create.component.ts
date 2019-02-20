@@ -20,7 +20,7 @@ export class BookCreateComponent implements OnInit {
       'author': new FormControl(null, Validators.required),
       'title': new FormControl(null, Validators.required),
       'category': new FormControl(null, Validators.required),
-      'published': new FormControl(null, Validators.required),
+      'published': new FormControl(null, [Validators.required, this.isValidPublishingYear.bind(this)]),
       'description': new FormControl()
     });
 
@@ -43,5 +43,12 @@ export class BookCreateComponent implements OnInit {
       this.createBookForm.reset();
       this.isSubmitPushed = false;
     }
+  }
+
+  isValidPublishingYear(control: FormControl): {[s: string]: boolean} {
+    if (control.value > 2019 || control.value < 1901) {
+      return {'yearIsForbidden': true};
+    }
+    return {'yearIsForbidden': false};
   }
 }
