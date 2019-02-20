@@ -52,6 +52,7 @@ export class BookCreateComponent implements OnInit {
     console.log('onSubmit', this.createBookForm.value);
 
     if (this.formStatus === "VALID") {
+      //ide a válaszhoz még jó lenne valami error handling
       this.sendCreateNewBookHttpRequest(this.createBookForm.value)
         .subscribe((result) => console.log('onHttpResponse', result) );
       this.createBookForm.reset();

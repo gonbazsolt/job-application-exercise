@@ -1,18 +1,30 @@
 {
   "books": [
-    { 
+    {
       "id": 1,
       "author": "Müller Péter",
       "title": "Szeretetkönyv",
       "category": "Életrajz",
       "published": 2000,
       "description": "Filózófiai elmélkedés"
+    },
+    {
+      "id": 2,
+      "author": "George Orwell",
+      "title": "Állatfarm",
+      "category": "Regény",
+      "published": 1950,
+      "description": "Minden állat egyenlő, de vannak egyenlőbbek"
     }
   ],
   "stock": [
-    { 
+    {
       "book_id": 1,
       "qty": 105
+    },
+    {
+      "book_id": 2,
+      "qty": 20
     }
   ],
   "transactions": [
