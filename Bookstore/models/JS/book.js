@@ -1,11 +1,11 @@
 class Book {
-  constructor() {
+  constructor(book_object) {
     this.id = null;
-    this.author = '';
-    this.title = '';
-    this.category = '';
-    this.published = null;
-    this.description = '';
+    this.author = book_object.author;
+    this.title = book_object.title;
+    this.category = book_object.category;
+    this.published = book_object.published;
+    this.description = book_object.description;
   }
 }
 

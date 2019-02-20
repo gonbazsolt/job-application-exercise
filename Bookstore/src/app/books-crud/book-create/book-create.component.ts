@@ -52,9 +52,13 @@ export class BookCreateComponent implements OnInit {
     console.log('onSubmit', this.createBookForm.value);
 
     if (this.formStatus === "VALID") {
-      //ide a válaszhoz még jó lenne valami error handling
       this.sendCreateNewBookHttpRequest(this.createBookForm.value)
-        .subscribe((result) => console.log('onHttpResponse', result) );
+        .subscribe(
+          result => console.log('onHttpResponse', result),
+          (error) => {
+            alert(`Az adatbázisba írás sikertelen volt: ${error.error.message ? error.error.message : error.message}`);
+            console.log('onHttpRequestError', error)
+          });
       this.createBookForm.reset();
       this.isSubmitPushed = false;
     }
@@ -69,11 +73,11 @@ export class BookCreateComponent implements OnInit {
   }
 
   sendCreateNewBookHttpRequest(book: any): Observable<any> {
+    //book.published = null; //direkt hiba generálása az error handling teszteléséhez
     console.log('onHttpRequest', JSON.stringify(book));
     let headers: HttpHeaders = new HttpHeaders();
     headers.set('Content-Type', 'application/json');
-    console.log('onHttpRequest', headers);
 
-    return this.http.post<any>('http://localhost:8080/books/create/new', book, {headers: headers});
+    return this.http.post<any>('http://localhost:8080/books/create', book, {headers: headers});
   }
 }
