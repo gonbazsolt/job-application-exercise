@@ -22,7 +22,6 @@ export class BookIdentifierComponent implements OnInit, DoCheck {
 
     this.http.get<any>('http://localhost:8080/books/listall').subscribe((result) => {
       result.books.forEach(element => this.books.push(new Book(element)));
-      console.log('itt történik a HTTP request, elemek szama:', result.books.length);
     });
   }
 

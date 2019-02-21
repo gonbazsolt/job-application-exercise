@@ -1,0 +1,13 @@
+.container {
+  max-width: 70%;
+  margin: 10px auto 10px auto;
+  padding-bottom: 10px;
+}
+
+a {
+  margin-left: 20px;
+}
+
+p {
+  margin-left: 20px;
+}

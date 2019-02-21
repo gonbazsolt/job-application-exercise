@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Book } from '../../../../models/TS/book'
-import { currentId } from 'async_hooks';
 
 @Component({
   selector: 'app-book-modify',
@@ -23,11 +22,10 @@ export class BookModifyComponent implements OnInit {
   formStatus: string = 'VALID';
   isSubmitPushed: boolean = false;
   notValidPublishingYear: boolean = true;
+  succesMessage: boolean = false;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.currentBook_id = this.route.snapshot.params.id;
-
-    this.http.get<any>(`http://localhost:8080/books/getonebook/${this.currentBook_id}`).toPromise();
   }
 
   async ngOnInit() {
@@ -68,6 +66,11 @@ export class BookModifyComponent implements OnInit {
         );
       this.modifyBookForm.reset();
       this.isSubmitPushed = false;
+
+      this.succesMessage = true;
+      setTimeout(() => {
+        this.succesMessage = false;
+      }, 1500);
     }
   }
 

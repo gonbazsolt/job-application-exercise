@@ -1,3 +1,28 @@
-<p>
-  book-delete works!
-</p>
+<div class="container bg-light border border-primary">
+  <h1 class="text-center">TÖRLÉS</h1>
+
+  <h5>Szerző</h5>
+  <span>{{ currentBook.author }}</span>
+  <hr>
+
+  <h5>Cím</h5>
+  <span>{{ currentBook.title }}</span>
+  <hr>
+
+  <h5>Kategória</h5>
+  <span>{{ currentBook.category }}</span>
+  <hr>
+
+  <h5>Kiadás éve</h5>
+  <span>{{ currentBook.published }}</span>
+  <hr>
+
+  <h5>Leírás</h5>
+  <span>{{ currentBook.description }}</span>
+  <hr>
+
+  <span>Biztos hogy törlöd?</span>
+  <a class="btn btn-danger text-white" (click)="delete()">Igen</a>
+  <a class="btn btn-danger text-white" routerLink="/books/choose/" [queryParams]="{func: 'Del'}">Nem</a>
+  <p *ngIf="succesMessage" class="d-inline text-success font-weight-bold">TÖRÖLVE</p>
+</div>

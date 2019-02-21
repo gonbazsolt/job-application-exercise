@@ -17,7 +17,7 @@ router.use(function (req, res, next) {
 
 router.post('/', (req, res, next) => {
   const book = new Book(req.body);
-  const allBooksArray = db.getState().books;
+  const allBooksArray = db.get('books').sortBy('id').value();
   (allBooksArray.length === 0) ? book.id = 1 : book.id = allBooksArray[allBooksArray.length - 1].id + 1;
   //ERROR HANDLING: ha nincs a db fájl, akkor a length-nél lehal, 500 Server Error megy vissza
   //azt sem vizsgálom, hogy a tábla létezik-e az adatbázisban, ezek az első refaktorálás feladai lehetnek
