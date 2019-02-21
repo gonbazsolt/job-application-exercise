@@ -67,6 +67,7 @@ export class BookCreateComponent implements OnInit {
 
   isValidPublishingYear(control: FormControl): { [s: string]: boolean } {
     if (control.value > 2019 || control.value < 1901) {
+      this.notValidPublishingYear = true;
       return { 'yearIsForbidden': true };
     }
     this.notValidPublishingYear = false;

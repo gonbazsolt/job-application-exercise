@@ -2,14 +2,15 @@
   <div class="row h-100">
     <div class="col-3">
       <nav class="nav flex-column">
-        <h3 class="text-center">Könyvek szerkesztése</h3>
+        <h2 class="text-center text-light">Könyvek szerkesztése</h2>
+        <br>
         <a routerLink="create" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-primary btn-lg">FELVITEL</a>
         <a routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-primary btn-lg">LISTÁZÁS</a>
-        <a routerLink="modify" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-primary btn-lg">MÓDOSTÁS</a>
-        <a routerLink="delete" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-primary btn-lg">TÖRLÉS</a>
+        <a routerLink="choose" [queryParams]="{func: 'Mod'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-primary btn-lg">MÓDOSTÁS</a>
+        <a routerLink="choose" [queryParams]="{func: 'Del'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-primary btn-lg">TÖRLÉS</a>
         <br>
         <a routerLink="/manager" class="nav-link btn btn-success btn-lg">NYILVÁNTARTÁS</a>
-        <br><br>
+        <br><br>111
         <a href="" role="button" class="nav-link btn btn-secondary btn-lg">KEZDŐLAP</a>
       </nav>
     </div>

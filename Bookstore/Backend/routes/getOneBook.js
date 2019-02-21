@@ -15,11 +15,13 @@ router.use(function (req, res, next) {
   next();
 });
 
-router.get('/', (req, res) => {
-  let body = db.getState().books;
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  let findObject = { id: parseInt(id) };
+  let body = db.get('books').find(findObject).value();
 
   res.status(200).json({
-    books: body
+    book: body
   });
 });
 

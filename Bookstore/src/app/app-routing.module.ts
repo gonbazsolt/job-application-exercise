@@ -11,19 +11,26 @@ import { BookDeleteComponent } from './books-crud/book-delete/book-delete.compon
 import { TransactionReceiveComponent } from './book-stock-manager/transaction-receive/transaction-receive.component';
 import { TransactionSellComponent } from './book-stock-manager/transaction-sell/transaction-sell.component';
 import { TransactionListComponent } from './book-stock-manager/transaction-list/transaction-list.component';
+import { EmptyPageComponent } from './empty-page/empty-page.component';
+import { BookIdentifierComponent } from './books-crud/book-identifier/book-identifier.component';
 
 const routes: Routes = [
   {path: '', component: OpenPageComponent},
   {path: 'books', component: BooksCrudComponent, children: [
+    {path: '', component: EmptyPageComponent},
+    {path: 'choose', component: BookIdentifierComponent},
     {path: 'create', component: BookCreateComponent},
     {path: 'list', component: BookListComponent},
-    {path: 'modify', component: BookModifyComponent},
-    {path: 'delete', component: BookDeleteComponent}
+    {path: 'modify/:id', component: BookModifyComponent},
+    {path: 'delete/:id', component: BookDeleteComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'}
   ]},
   {path: 'manager', component: BookStockManagerComponent, children: [
+    {path: '', component: EmptyPageComponent},
     {path: 'receive', component: TransactionReceiveComponent},
     {path: 'sell', component: TransactionSellComponent},
-    {path: 'transactionList', component: TransactionListComponent}
+    {path: 'transactionList', component: TransactionListComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'}
   ]},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

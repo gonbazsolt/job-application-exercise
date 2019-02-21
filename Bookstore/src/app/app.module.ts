@@ -18,6 +18,8 @@ import { BookDeleteComponent } from './books-crud/book-delete/book-delete.compon
 import { TransactionReceiveComponent } from './book-stock-manager/transaction-receive/transaction-receive.component';
 import { TransactionSellComponent } from './book-stock-manager/transaction-sell/transaction-sell.component';
 import { TransactionListComponent } from './book-stock-manager/transaction-list/transaction-list.component';
+import { BookIdentifierComponent } from './books-crud/book-identifier/book-identifier.component';
+import { EmptyPageComponent } from './empty-page/empty-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { TransactionListComponent } from './book-stock-manager/transaction-list/
     BookDeleteComponent,
     TransactionReceiveComponent,
     TransactionSellComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    BookIdentifierComponent,
+    EmptyPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+.container {
+  max-width: 70%;
+  margin: 10px auto 10px auto;
+}
+
+form {
+  margin: 10px;
+}
+
+input {
+  max-width: 60%;
+}

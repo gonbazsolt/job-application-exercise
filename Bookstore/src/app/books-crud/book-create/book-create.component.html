@@ -1,4 +1,4 @@
-<div class="container border border-primary">
+<div class="container bg-light border border-primary">
   <form [formGroup]="createBookForm" (ngSubmit)="onSubmit()"><br>
 
     <div class="form-group">
@@ -6,7 +6,8 @@
         <h5>Szerző*</h5>
       </label>
       <input type="text" id="author" formControlName="author" class="form-control" placeholder="Könyv szerzőjének neve">
-      <small *ngIf="(createBookForm.get('author').touched || isSubmitPushed) && createBookForm.value.author === null"
+      <small *ngIf="(createBookForm.get('author').touched || isSubmitPushed) &&
+                    (createBookForm.value.author === null || createBookForm.value.author === '')"
         class="text-danger">
         A mező kitöltése kötelező!
       </small>
@@ -17,7 +18,8 @@
         <h5>Cím*</h5>
       </label>
       <input type="text" id="title" formControlName="title" class="form-control" placeholder="Könyv címe">
-      <small *ngIf="(createBookForm.get('title').touched || isSubmitPushed) && createBookForm.value.title === null"
+      <small *ngIf="(createBookForm.get('title').touched || isSubmitPushed) &&
+                    (createBookForm.value.title === null || createBookForm.value.title === '')"
         class="text-danger">
         A mező kitöltése kötelező!
       </small>
@@ -62,6 +64,6 @@
         placeholder="A könyvről pár szó">
     </div>
 
-    <button class="btn btn-danger" type="submit">Submit</button>
+    <button class="btn btn-danger" type="submit">Elküld</button>
   </form>
 </div>

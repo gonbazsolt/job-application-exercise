@@ -1,6 +1,10 @@
 class Book {
   constructor(book_object) {
-    this.id = null;
+    if (book_object.id) {
+      this.id = book_object.id;
+    } else {
+      this.id = null;
+    }
     this.author = book_object.author;
     this.title = book_object.title;
     this.category = book_object.category;

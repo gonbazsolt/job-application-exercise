@@ -1,0 +1,6 @@
+.container-fluid {
+  height: 100% 100%;
+  background-size: 100% 100%;
+  background-position: right;
+  background-image: url("../../assets/Books-Background-1.jpg");
+}
