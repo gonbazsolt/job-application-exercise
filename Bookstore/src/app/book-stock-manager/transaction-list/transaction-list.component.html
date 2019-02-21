@@ -1,3 +1,22 @@
-<p>
-  transaction-list works!
-</p>
+<table class="table bg-light">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">DB-ID</th>
+      <th scope="col">Könyv ID</th>
+      <th scope="col">Dátum</th>
+      <th scope="col">(B)evételez/(E)lad</th>
+      <th scope="col">Mennyiség</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions; let i = index">
+      <th scope="row">{{ i+1 }}</th>
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.book_id }}</td>
+      <td>{{ transaction.date }}</td>
+      <td>{{ transaction.mov_type }}</td>
+      <td>{{ transaction.qty }}</td>
+    </tr>
+  </tbody>
+</table>
