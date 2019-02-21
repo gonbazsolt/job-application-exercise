@@ -17,6 +17,7 @@ export class BookCreateComponent implements OnInit {
   formStatus: string;
   isSubmitPushed: boolean = false;
   notValidPublishingYear: boolean = true;
+  succesMessage: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -62,6 +63,11 @@ export class BookCreateComponent implements OnInit {
           });
       this.createBookForm.reset();
       this.isSubmitPushed = false;
+      
+      this.succesMessage = true;
+      setTimeout(() => {
+        this.succesMessage = false;
+      }, 1500);
     }
   }
 

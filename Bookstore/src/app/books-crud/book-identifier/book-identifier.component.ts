@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../../../../models/TS/book';
@@ -9,9 +9,11 @@ import { Book } from '../../../../models/TS/book';
   styleUrls: ['./book-identifier.component.css']
 })
 
-export class BookIdentifierComponent implements OnInit {
+export class BookIdentifierComponent implements OnInit, DoCheck {
   @Input() func: string;
   books: Book[] = [];
+  tableHeadLabel: string;
+  buttonLabel: string;
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
@@ -20,7 +22,19 @@ export class BookIdentifierComponent implements OnInit {
 
     this.http.get<any>('http://localhost:8080/books/listall').subscribe((result) => {
       result.books.forEach(element => this.books.push(new Book(element)));
+      console.log('itt történik a HTTP request, elemek szama:', result.books.length);
     });
+  }
+
+  ngDoCheck() {
+    if (this.func === 'Mod') {
+      this.tableHeadLabel = 'Módosítom';
+      this.buttonLabel = 'MÓDOSÍT';
+    }
+    if (this.func === 'Del') {
+      this.tableHeadLabel = 'Törlöm';
+      this.buttonLabel = 'TÖRÖL';
+    }
   }
 
   navigateTo(id: number) {

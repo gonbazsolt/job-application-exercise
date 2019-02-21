@@ -10,3 +10,7 @@ form {
 input {
   max-width: 60%;
 }
+
+p {
+  padding-left: 20px;
+}

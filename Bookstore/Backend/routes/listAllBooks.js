@@ -17,6 +17,7 @@ router.use(function (req, res, next) {
 
 router.get('/', (req, res) => {
   let body = db.getState().books;
+  console.log("darabszam:", body.length);
 
   res.status(200).json({
     books: body
