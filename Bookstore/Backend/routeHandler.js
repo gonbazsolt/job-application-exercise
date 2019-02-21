@@ -8,10 +8,14 @@ const getOneBook = require('./routes/getOneBook');
 const modifyBook = require('./routes/modifyBook');
 const deleteBook = require('./routes/deleteBook');
 
+const listAllTransactions = require('./routes/listAllTransactions');
+
 app.use('/books/create', createNewBook);
 app.use('/books/listall', listAllBooks);
 app.use('/books/getonebook', getOneBook);
 app.use('/books/modify', modifyBook);
 app.use('/books/delete', deleteBook);
+
+app.use('/transactions/listall', listAllTransactions);
 
 module.exports = app;

@@ -21,7 +21,7 @@
       <td>{{ book.published }}</td>
       <td>{{ book.description }}</td>
       <td>
-        <button class="btn btn-warning" (click)="navigateTo(book.id)">{{ buttonLabel }}</button>
+        <button class="btn btn-warning" (click)="navigateTo(book.id)" [disabled]="checkTransactionForBook(book.id)" [title]="checkTransactionForBook(book.id) ? 'Nem lehet törölni!' : ''">{{ buttonLabel }}</button>
       </td>
     </tr>
   </tbody>

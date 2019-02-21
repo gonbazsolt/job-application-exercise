@@ -14,6 +14,7 @@ export class BookIdentifierComponent implements OnInit, DoCheck {
   books: Book[] = [];
   tableHeadLabel: string;
   buttonLabel: string;
+  allTransaction = [];
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
@@ -22,6 +23,10 @@ export class BookIdentifierComponent implements OnInit, DoCheck {
 
     this.http.get<any>('http://localhost:8080/books/listall').subscribe((result) => {
       result.books.forEach(element => this.books.push(new Book(element)));
+    });
+
+    this.http.get<any>('http://localhost:8080/transactions/listall').subscribe((result) => {
+      result.transactions.forEach(element => this.allTransaction.push(element));
     });
   }
 
@@ -43,5 +48,20 @@ export class BookIdentifierComponent implements OnInit, DoCheck {
     if (this.func === 'Del') {
       this.router.navigate(['../delete/', id], { relativeTo: this.route });
     }
+  }
+
+  checkTransactionForBook(id: number): boolean {
+    let hasThereBeenTransaction: boolean = false;
+
+    if (this.func === 'Del') {
+
+      this.allTransaction.forEach(element => {
+        if (element.book_id === id) {
+          hasThereBeenTransaction = true;
+        }
+      });
+    }
+
+    return hasThereBeenTransaction;
   }
 }
