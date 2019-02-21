@@ -1,0 +1,66 @@
+<div class="container bg-light border border-primary">
+  <form [formGroup]="receiveTransactionForm" (ngSubmit)="onSubmit()"><br>
+
+    <div class="form-group">
+      <label for="book_id">
+        <h5>Könyv azonosító*</h5>
+      </label>
+      <input type="text" id="book_id" formControlName="book_id" class="form-control"
+        placeholder="A bevételezendő könyv azonosítója">
+      <div *ngIf="!receiveTransactionForm.get('book_id').valid &&
+                  receiveTransactionForm.get('book_id').touched" class="help-block">
+        <small *ngIf="receiveTransactionForm.get('book_id').errors['required']" class="text-danger">
+          A mező kitöltése kötelező!
+        </small>
+        <small *ngIf="!receiveTransactionForm.get('book_id').errors['required'] &&
+                      receiveTransactionForm.get('book_id').errors['bookIDIsForbidden']" class="text-danger">
+          Csak létező könyvre készíthet tranzakciót!
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date">
+        <h5>Dátum*</h5>
+      </label>
+      <input type="date" id="date" formControlName="date" class="form-control">
+      <small
+        *ngIf="receiveTransactionForm.get('date').touched && receiveTransactionForm.get('date').errors?.required"
+        class="text-danger">
+        A mező kitöltése kötelező!
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="mov_type">
+        <h5>(B)evételez/(E)lad*</h5>
+      </label>
+      <input type="text" id="mov_type" formControlName="mov_type" class="form-control text-uppercase" placeholder="B/E">
+      <div *ngIf="!receiveTransactionForm.get('mov_type').valid &&
+                  receiveTransactionForm.get('mov_type').touched" class="help-block">
+        <small *ngIf="receiveTransactionForm.get('mov_type').errors['required']" class="text-danger">
+          A mező kitöltése kötelező!
+        </small>
+        <small *ngIf="!receiveTransactionForm.get('mov_type').errors['required'] &&
+                      receiveTransactionForm.get('mov_type').errors['movementTypeIsForbidden']" class="text-danger">
+          Csak bevételezés vagy eladás készíthet!
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="qty">
+        <h5>Mennyiség*</h5>
+      </label>
+      <input type="number" id="qty" formControlName="qty" class="form-control" placeholder="Írd ide a darabszámot">
+      <small
+        *ngIf="receiveTransactionForm.get('qty').touched && receiveTransactionForm.get('qty').errors?.required"
+        class="text-danger">
+        A mező kitöltése kötelező!
+      </small>
+    </div>
+
+    <button class="btn btn-danger" type="submit">Elküld</button>
+    <p *ngIf="succesMessage" class="d-inline text-success font-weight-bold">ELKÜLDVE</p>
+  </form>
+</div>

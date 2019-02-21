@@ -1,20 +1,21 @@
 <div class="container-fluid h-100">
-    <div class="row h-100">
-      <div class="col-3">
-        <nav class="nav flex-column">
-          <h2 class="text-center text-light">Tranzakciók a könyvekkel</h2>
-          <br>
-          <a routerLink="receive" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-success btn-lg">BEVÉTELEZ</a>
-          <a routerLink="sell" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-success btn-lg">ELAD</a>
-          <a routerLink="transactionList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link btn btn-success btn-lg">TRANZAKCIÓK LISTÁZÁSA</a>
-          <br>
-          <a routerLink="/books" class="nav-link btn btn-primary btn-lg">KÖNYVEK KARBANTARTÁSA</a>
-          <br><br>
-          <a href="" role="button" class="nav-link btn btn-secondary btn-lg">KEZDŐLAP</a>
-        </nav>
-      </div>
-      <div class="col-9">
-        <router-outlet></router-outlet>
-      </div>
+  <div class="row h-100">
+    <div class="col-3">
+      <nav class="nav flex-column">
+        <h2 class="text-center text-light">Tranzakciók a könyvekkel</h2>
+        <br>
+        <a routerLink="receive_or_sell" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          class="btn btn-success btn-lg">BEVÉTELEZ / ELAD</a>
+        <a routerLink="transactionList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          class="nav-link btn btn-success btn-lg">TRANZAKCIÓK LISTÁZÁSA</a>
+        <br>
+        <a routerLink="/books" class="nav-link btn btn-primary btn-lg">KÖNYVEK KARBANTARTÁSA</a>
+        <br><br>
+        <a href="" role="button" class="nav-link btn btn-secondary btn-lg">KEZDŐLAP</a>
+      </nav>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
     </div>
   </div>
+</div>

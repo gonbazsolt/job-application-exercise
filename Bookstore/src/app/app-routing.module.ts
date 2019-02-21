@@ -8,8 +8,7 @@ import { BookCreateComponent } from './books-crud/book-create/book-create.compon
 import { BookListComponent } from './books-crud/book-list/book-list.component';
 import { BookModifyComponent } from './books-crud/book-modify/book-modify.component';
 import { BookDeleteComponent } from './books-crud/book-delete/book-delete.component';
-import { TransactionReceiveComponent } from './book-stock-manager/transaction-receive/transaction-receive.component';
-import { TransactionSellComponent } from './book-stock-manager/transaction-sell/transaction-sell.component';
+import { TransactionReceiveOrSellComponent } from './book-stock-manager/transaction-receive-or-sell/transaction-receive-or-sell.component';
 import { TransactionListComponent } from './book-stock-manager/transaction-list/transaction-list.component';
 import { EmptyPageComponent } from './empty-page/empty-page.component';
 import { BookIdentifierComponent } from './books-crud/book-identifier/book-identifier.component';
@@ -27,8 +26,7 @@ const routes: Routes = [
   ]},
   {path: 'manager', component: BookStockManagerComponent, children: [
     {path: '', component: EmptyPageComponent},
-    {path: 'receive', component: TransactionReceiveComponent},
-    {path: 'sell', component: TransactionSellComponent},
+    {path: 'receive_or_sell', component: TransactionReceiveOrSellComponent},
     {path: 'transactionList', component: TransactionListComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'}
   ]},

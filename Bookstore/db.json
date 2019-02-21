@@ -10,11 +10,35 @@
     },
     {
       "id": 1,
-      "author": "Müller Péter2",
+      "author": "Müller Péter",
       "title": "Szeretetkönyv",
       "category": "Életrajz",
       "published": 2000,
       "description": "Filózófiai elmélkedés"
+    },
+    {
+      "id": 4,
+      "author": "Jókai Mór",
+      "title": "A kőszívű ember fiai",
+      "category": "Regény",
+      "published": 1980,
+      "description": "A Baradlai család és a szabadságharc"
+    },
+    {
+      "id": 5,
+      "author": "William Shakespeare",
+      "title": "Hamlet",
+      "category": "Dráma",
+      "published": 1962,
+      "description": "A dán királyfi örülete"
+    },
+    {
+      "id": 6,
+      "author": "Babits ​Mihály",
+      "title": "Babits ​Mihály összegyűjtött versei",
+      "category": "Verseskötet",
+      "published": 2007,
+      "description": null
     }
   ],
   "stock": [
@@ -31,9 +55,37 @@
     {
       "id": 1,
       "book_id": 1,
-      "date": "2019/02/18",
+      "date": "2019-02-18",
       "mov_type": "B",
       "qty": 100
+    },
+    {
+      "id": 2,
+      "book_id": 4,
+      "date": "2019-02-21",
+      "mov_type": "B",
+      "qty": 37
+    },
+    {
+      "id": 3,
+      "book_id": 6,
+      "date": "2019-02-21",
+      "mov_type": "B",
+      "qty": 14
+    },
+    {
+      "id": 4,
+      "book_id": 2,
+      "date": "2019-02-20",
+      "mov_type": "E",
+      "qty": 5
+    },
+    {
+      "id": 5,
+      "book_id": 6,
+      "date": "2019-02-19",
+      "mov_type": "B",
+      "qty": 24
     }
   ]
 }

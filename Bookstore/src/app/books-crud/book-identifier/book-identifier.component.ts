@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../../../../models/TS/book';
@@ -9,6 +9,7 @@ import { Book } from '../../../../models/TS/book';
   styleUrls: ['./book-identifier.component.css']
 })
 
+@Injectable()
 export class BookIdentifierComponent implements OnInit, DoCheck {
   @Input() func: string;
   books: Book[] = [];
