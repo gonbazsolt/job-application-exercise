@@ -43,12 +43,16 @@
   ],
   "stock": [
     {
-      "book_id": 1,
-      "qty": 105
+      "book_id": 2,
+      "qty": 0
     },
     {
-      "book_id": 2,
-      "qty": 20
+      "book_id": 1,
+      "qty": 65
+    },
+    {
+      "book_id": 6,
+      "qty": 38
     }
   ],
   "transactions": [
@@ -61,7 +65,7 @@
     },
     {
       "id": 2,
-      "book_id": 4,
+      "book_id": 2,
       "date": "2019-02-21",
       "mov_type": "B",
       "qty": 37
@@ -86,6 +90,27 @@
       "date": "2019-02-19",
       "mov_type": "B",
       "qty": 24
+    },
+    {
+      "id": 6,
+      "book_id": 2,
+      "date": "2019-02-22",
+      "mov_type": "B",
+      "qty": 20
+    },
+    {
+      "id": 7,
+      "book_id": 2,
+      "date": "2019-02-22",
+      "mov_type": "E",
+      "qty": 40
+    },
+    {
+      "id": 8,
+      "book_id": 1,
+      "date": "2019-02-22",
+      "mov_type": "E",
+      "qty": 40
     }
   ]
 }

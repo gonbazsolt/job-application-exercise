@@ -7,6 +7,7 @@ const adapter = new FileSync('./../db.json');
 const db = low(adapter);
 
 var Transaction = require('./../../models/JS/transaction');
+var StockManager = require('./../stockManager');
 
 router.use(express.json());
 router.use(function (req, res, next) {
@@ -33,10 +34,23 @@ router.post('/', (req, res, next) => {
   }
 
   if (validTransactionRecord) {
-    answer = {
-      "success": transaction
-    };
-    db.get('transactions').push(transaction).write();
+    const stockManager = new StockManager(db, transaction);
+
+    if (stockManager.hasEnoughStock()) {
+      stockManager.bookingStock(transaction.mov_type);
+
+      answer = {
+        "transactionSuccess": transaction,
+        "newStock": stockManager.getCurrentStock()
+      };
+      db.get('transactions').push(transaction).write();
+    } else {
+      statusCode = 500;
+      answer = {
+        "message": "Az eladás nem lehetséges, mivel adott könyből nincs elég készleten!",
+        "avaibleStock" : stockManager.getCurrentStock()
+      }
+    }
   } else {
     statusCode = 500;
     answer = {

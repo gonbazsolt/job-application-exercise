@@ -64,9 +64,6 @@ export class TransactionReceiveOrSellComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formStatus);
-    console.log(this.receiveTransactionForm.value);
-
     if (this.formStatus === "VALID") {
       this.receiveTransactionForm.value.book_id = parseInt(this.receiveTransactionForm.value.book_id);
       this.receiveTransactionForm.value.mov_type = this.receiveTransactionForm.value.mov_type.toUpperCase();
