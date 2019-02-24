@@ -1,0 +1,17 @@
+.container {
+  margin: 10px auto 10px auto;
+  padding: 0 5px 0 5px;
+}
+
+form {
+  margin: 2px;
+}
+
+.inputfield {
+  height: 25px;
+}
+
+button {
+  height: 25px;
+  padding: 0 5px 2px 5px;
+}

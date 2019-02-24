@@ -19,6 +19,8 @@ import { BookIdentifierComponent } from './books-crud/book-identifier/book-ident
 
 import { TransactionListComponent } from './book-stock-manager/transaction-list/transaction-list.component';
 import { TransactionReceiveOrSellComponent } from './book-stock-manager/transaction-receive-or-sell/transaction-receive-or-sell.component';
+import { BookFilterComponent } from './books-crud/book-list/book-filter/book-filter.component';
+import { BookTableComponent } from './books-crud/book-list/book-table/book-table.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { TransactionReceiveOrSellComponent } from './book-stock-manager/transact
     TransactionReceiveOrSellComponent,
     TransactionListComponent,
     BookIdentifierComponent,
-    EmptyPageComponent
+    EmptyPageComponent,
+    BookFilterComponent,
+    BookTableComponent
   ],
   imports: [
     BrowserModule,

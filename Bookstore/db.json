@@ -52,7 +52,7 @@
     },
     {
       "book_id": 6,
-      "qty": 38
+      "qty": 0
     }
   ],
   "transactions": [
@@ -111,6 +111,13 @@
       "date": "2019-02-22",
       "mov_type": "E",
       "qty": 40
+    },
+    {
+      "id": 9,
+      "book_id": 6,
+      "date": "2019-02-22",
+      "mov_type": "E",
+      "qty": 38
     }
   ]
 }
