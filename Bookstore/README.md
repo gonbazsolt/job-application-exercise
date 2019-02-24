@@ -1,27 +1,21 @@
-# Bookstore
+# Alkalmazás indítása
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+1. clone repo (pl: VisualStudioCode-ban): git clone https://github.com/gonbazsolt/job-application-exercise.git
+2. install dependencies:
+```
+- cd job-application-exercise/Bookstore
+- npm i
+```
+3. elindítani az alkalmazás részeit, 3 külön terminálban:
+```
+- cd Bookstore/Backend
+- nodemon server.js (web backend)
+- cd Bookstore
+- json-server --watch db.json (Mock DB)
+- cd Bookstore
+- ng serve -o (Angular frontend)
+```
 
-## Development server
+###### Megjegyzés
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Sajnos a web backend újraindítása nélkül a 'Módosítás' és 'Törlés' - a könyvek karbantartása - listái nem frissülnek, ezért a felvitel, módosítás és törlés esetén a backend szerver fájl újraindítása szükséges. A 'Listázás'-t a backend kihagyásával, egyenesen a mock adatbázis elérésével írtam meg - ezért szükséges elindítani a JSON server-t is -, az dinamikusan változik minden funkciónál.
