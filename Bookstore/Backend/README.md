@@ -1,10 +1,5 @@
 # Tartalomjegyzék
 
-## db.json
-
-A Mock adatbázis fájl. Tulajdonképpen egy JSON, amiben a fő property-k adatbázis tábláknak felelnek meg, ezek tömböket tartalmaznak és a tömb elemei az egyes rekordok, objektumokként kerülnek tárolásra.
-https://www.npmjs.com/package/json-server
-
 ## routeHandler.js
 
 A backend szerver ebben a fájlban kezeli a különböző endpointokhoz tartozó fájlokat. A routes mappában találhatóak a fájlok, és azokban van deklarálva az egyes endpointok GET, POST, PUT, DELETE Http requestekre adandó válasz.
